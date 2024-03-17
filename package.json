@@ -26,7 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!(axios|@splinetool/react-spline)/)\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,6 +48,21 @@
     ]
   },
   "devDependencies": {
-    "daisyui": "^4.7.2"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "daisyui": "^4.7.2",
+    "identity-obj-proxy": "^3.0.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@splinetool/react-splineaxios|axios)/)"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
