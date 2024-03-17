@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import PDFViewer from './PDFViewer';
 import MetricsBox from './MetricsBox';
@@ -26,7 +26,7 @@ function Evaluation() {
     {/* Branding Section */}
      <div class="navbar bg-[#111111] px-5">
                 <div class="flex-1 px-10">
-                    <img className="h-24" src="1.png">
+                    <img className="h-24" src="1.png" alt=''>
                     </img>
 
                     
@@ -41,13 +41,13 @@ function Evaluation() {
                     </div>
                     <ul tabindex="0" class="z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         <li>
-                        <a class="justify-between">
+                        <a href="" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a href="">Settings</a></li>
+                        <li><a href="">Logout</a></li>
                     </ul>
                     </div>
                 </div>
