@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import axios from 'axios';
-import PDFViewer from './PDFViewer';
 import MetricsBox from './MetricsBox';
 import FileUpload from './FileUpload';
 import Spline from '@splinetool/react-spline';
@@ -13,15 +12,15 @@ function Evaluation() {
   const [accuracy, setAccuracy] = useState('');
   const [clarity, setClarity] = useState('');
 
-  const fetchData = () => {
-    axios.post('http://127.0.0.1:5000/evaluate')
-        .then(response => {
-            setOverallScore(response.data.overall);
-            setAccuracy(response.data.accuracy);
-            setClarity(response.data.clarity);
-        })
-        .catch(error => console.error('There was an error!', error));
-  }
+//   const fetchData = () => {
+//     axios.post('http://127.0.0.1:5000/evaluate')
+//         .then(response => {
+//             setOverallScore(response.data.overall);
+//             setAccuracy(response.data.accuracy);
+//             setClarity(response.data.clarity);
+//         })
+//         .catch(error => console.error('There was an error!', error));
+//   }
   
   return (
     <>
