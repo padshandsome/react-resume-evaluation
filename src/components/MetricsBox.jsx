@@ -12,17 +12,9 @@ const MetricsBox = ({MetricName, Explanation, MetricValue}) => {
                             
                                 <div className="dropdown dropdown-right ">
                                     <div tabIndex="0" role="button" className="">
-                                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeidth="2" d="m19 9-7 7-7-7"/>
-                                    </svg>
                                     
                                     </div>
-                                    <div tabIndex="0" className="dropdown-content z-[1] card card-compact 2xl:w-64 p-2 ml-20 xl:ml-10 w-64 bg-white text-gray-700">
-                                        <div className="card-body">
-                                        <p className="card-title">{MetricName}: {MetricValue}</p>
-                                        <p>{Explanation}</p>
-                                        </div>
-                                    </div>
+    
                                 </div>
                             
                             </div> 
