@@ -8,9 +8,9 @@ import Spline from '@splinetool/react-spline';
 // TODO: 1. fix background compliable
 function Evaluation() {
 
-  const [overallScore, setOverallScore] = useState('');
-  const [accuracy, setAccuracy] = useState('');
-  const [clarity, setClarity] = useState('');
+//   const [overallScore, setOverallScore] = useState('');
+//   const [accuracy, setAccuracy] = useState('');
+//   const [clarity, setClarity] = useState('');
 
 //   const fetchData = () => {
 //     axios.post('http://127.0.0.1:5000/evaluate')
