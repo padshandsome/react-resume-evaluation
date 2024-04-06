@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import axios from 'axios';
+import React from 'react';
+// import axios from 'axios';
 import MetricsBox from './MetricsBox';
 import FileUpload from './FileUpload';
 import Spline from '@splinetool/react-spline';
