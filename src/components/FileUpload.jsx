@@ -77,7 +77,7 @@ function FileUpload() {
         //     <button type="submit">Upload File</button>
         // </form>
         <>
-        <div className="flex flex-row w-full h-full bg-[#111111]">
+        <div className="flex flex-row w-full h-full">
             <div className="flex flex-col w-1/5">
                 <div className="">
                     <label htmlFor="dropzone-file" className="flex flex-col  justify-center  2xl:h-20 xl:h-15 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-pink-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-orange-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">

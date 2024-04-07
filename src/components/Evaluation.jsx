@@ -29,7 +29,7 @@ const clarity = 35;
   return (
     <>
     {/* Branding Section */}
-     <div className="navbar bg-[#111111] px-5">
+     <div className="navbar bg-[#261b51] px-5">
                 <div className="flex-1 px-10">
                     <img className="h-24" src="1.png" alt=''>
                     </img>
@@ -59,7 +59,7 @@ const clarity = 35;
      </div>
 
     {/* Feature Section */}
-    <div className=" flex-row bg-gradient-to-r from-slate-950 via-black to-slate-950 h-full ">
+    <div className=" flex-row bg-gradient-to-r from-[#261b51] via-[#33427B] to-[#261b51] h-full ">
         {/* Hero Section */}
         <div className="hero-section flex flex-row 2xl:h-1/5 xl:h-1/6 lg:h-1/8">
             <div id="title-description" className="2xl:pt-12 px-5 xl:pt-4 w-3/5 flex flex-col">
@@ -67,9 +67,11 @@ const clarity = 35;
                 <p className="px-10 font-mono text-gray-50 2xl:text-xl xl:text-sm lg:text-sm">请上传您的简历，我们会通过多个维度去评测您的简历能否清晰、明确地展现您的优势。</p>
             </div>
 
-            <div id="title-image" className="w-1/5 overflow-hidden ">
+            <div id="title-image" className="overflow-hidden  ">
                 {/* <img src="./assets/cute_robot.webp" alt="Description" class="w-full h-auto object-cover"/> */}
-                <Spline scene="https://prod.spline.design/FivOZneYM64DY4RW/scene.splinecode"/>
+               
+                <Spline scene="https://prod.spline.design/bGY1NvZk7EF2IsPw/scene.splinecode"/>
+                
             </div>
         </div>
         
@@ -77,12 +79,12 @@ const clarity = 35;
         <div className="feature-section flex w-full p-2 h-4/5">
             {/* Upload buttons */}
             <div id="editor" className="w-3/5 pl-10 ">
-                <div className="editor mx-auto 2xl:p-5 xl:p-3 h-full shadow-3xl rounded-xl bg-gradient-to-r from-black via-slate-800 to-black">
-                    <div className="toolbar flex justify-between  p-2 bg-whit bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-t-lg border-b border-gray-200">
+                <div className="editor mx-auto 2xl:p-5 xl:p-3 h-full shadow-3xl rounded-xl ">
+                    <div className="toolbar flex justify-between  p-2 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-t-lg border-b shadow-2xl">
                         
                         
                        
-                        <div className="flex w-full gap-5"> 
+                        <div className="flex w-full gap-5 "> 
                   
                             <FileUpload/>
                         </div> 
@@ -95,7 +97,7 @@ const clarity = 35;
             <div className="divider divider-horizontal"></div>
 
             {/* Metrics Section */}
-            <div id="metrics" className="w-1/5 h-screen p-2 px-4 rounded-xl bg-gradient-to-r from-black via-slate-800 to-black-200">
+            <div id="metrics" className="w-1/5 h-screen p-2 px-4 rounded-xl ">
                 <div className="flex flex-wrap gap-3 first-letter mx-auto  justify-center ">
 
                 <MetricsBox MetricName={"Overall Score"} MetricValue={overallScore} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
@@ -116,7 +118,7 @@ const clarity = 35;
 
             {/* Suggestions Section */}
             <div id="details" className="w-1/5 ">
-                <div className="flex h-full flex-wrap mx-auto rounded-xl bg-gradient-to-r from-black via-slate-800 to-black">
+                <div className="flex h-full flex-wrap mx-auto rounded-xl ">
                     <div className="bg-white w-full m-2 rounded-lg text-blue-gray-900 p-6">
                         <p className="card-title">Suggestion:</p>
                         <p className="">Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience.</p>
