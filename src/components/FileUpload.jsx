@@ -33,7 +33,7 @@ function FileUpload() {
 
         
         try {
-            const response = await fetch('https://nodejsresumeevaluation.azurewebsites.net/upload', {
+            const response = await fetch('https://backend-react-resume-evaluation.vercel.app/upload', {
                 method: 'POST',
                 body: formData
             });
@@ -53,7 +53,7 @@ function FileUpload() {
     };
 
     async function fetchPdfUrl() {
-        fetch('https://nodejsresumeevaluation.azurewebsites.net/get-pdf-url')
+        fetch('https://backend-react-resume-evaluation.vercel.app/get-pdf-url')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
