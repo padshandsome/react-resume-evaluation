@@ -1,5 +1,4 @@
-import React from 'react';
-// import axios from 'axios';
+import React, {useState} from 'react';
 import MetricsBox from './MetricsBox';
 import FileUpload from './FileUpload';
 import Spline from '@splinetool/react-spline';
@@ -11,21 +10,33 @@ function Evaluation() {
 //   const [overallScore, setOverallScore] = useState('');
 //   const [accuracy, setAccuracy] = useState('');
 //   const [clarity, setClarity] = useState('');
-const overallScore = 20;
-const accuracy = 34;
-const clarity = 35;
+// const overallScore = 20;
+// const accuracy = 34;
+// const clarity = 35;
+
+const [response, setResponse] = useState(null);
+const [professional_related_score, setProfessional_related_score] = useState('');
+const [skill_covered_score, setSkill_covered_score] = useState('');
+const [grammar_score, setgrammar_score] = useState('');
+const [format_standard_score, setFormat_standard_score] = useState('');
+const [business_score, setBusiness_score] = useState('');
+
+const handleResponse = (data) => {
+    setResponse(data);
+
+    setProfessional_related_score(data.task1.result/5 * 100);
+    setSkill_covered_score(data.task2.coverage/5 * 100);
+    setgrammar_score(data.task3.grammar_score/5 * 100);
+    setFormat_standard_score(data.task4.format_standardization/5 * 100);
+    setBusiness_score(data.task5.business_sense/5 * 100)
+
+   
 
 
-//   const fetchData = () => {
-//     axios.post('http://127.0.0.1:5000/evaluate')
-//         .then(response => {
-//             setOverallScore(response.data.overall);
-//             setAccuracy(response.data.accuracy);
-//             setClarity(response.data.clarity);
-//         })
-//         .catch(error => console.error('There was an error!', error));
-//   }
-  
+};
+
+
+
   return (
     <>
     {/* Branding Section */}
@@ -79,14 +90,19 @@ const clarity = 35;
         <div className="feature-section flex w-full p-2 h-4/5">
             {/* Upload buttons */}
             <div id="editor" className="w-3/5 pl-10 ">
+            <div> test</div>
                 <div className="editor mx-auto 2xl:p-5 xl:p-3 h-full shadow-3xl rounded-xl ">
                     <div className="toolbar flex justify-between  p-2 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-t-lg border-b shadow-2xl">
                         
                         
                        
                         <div className="flex w-full gap-5 "> 
-                  
-                            <FileUpload/>
+                        
+                            <FileUpload onResponse={handleResponse}/>
+                            {/* {response && <div> Response: {JSON.stringify(response)} </div>} */}
+
+                            
+                            
                         </div> 
                     </div>
                  
@@ -100,17 +116,17 @@ const clarity = 35;
             <div id="metrics" className="w-1/5 h-screen p-2 px-4 rounded-xl ">
                 <div className="flex flex-wrap gap-3 first-letter mx-auto  justify-center ">
 
-                <MetricsBox MetricName={"Overall Score"} MetricValue={overallScore} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                {/* <MetricsBox MetricName={"Overall Score"} MetricValue={overallScore} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} /> */}
                 
-                <MetricsBox MetricName={"Clarity"} MetricValue={clarity} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                <MetricsBox MetricName={"Professional Related"} MetricValue={professional_related_score} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
 
-                <MetricsBox MetricName={"Accuracy "} MetricValue={accuracy} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                <MetricsBox MetricName={"Skill Covered "} MetricValue={skill_covered_score} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
                   
-                <MetricsBox MetricName={"Delivery"} MetricValue={52} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                <MetricsBox MetricName={"Grammar"} MetricValue={grammar_score} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
                  
-                <MetricsBox MetricName={"Engagement"} MetricValue={36} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                <MetricsBox MetricName={"Format Standard"} MetricValue={format_standard_score} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
                     
-                <MetricsBox MetricName={"Clarity"} MetricValue={76} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
+                <MetricsBox MetricName={"Business Sense"} MetricValue={business_score} Explanation={"Correctness in the context of an article refers to the accuracy and reliability of its information, adherence to grammatical rules, and consistency in style and formatting. It implies that the article is free from factual errors, logical inconsistencies, and language mistakes, ensuring that it communicates its message effectively and appropriately to its intended audience."} />
                 
                 </div>
     

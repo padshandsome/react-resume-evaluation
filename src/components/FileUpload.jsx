@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
-function FileUpload() {
+function FileUpload( {onResponse}) {
     // const [selectedFile, setSelectedFile] = useState(null);
     const [pdfUrl, setPdfUrl] = useState('');
 
@@ -9,7 +10,7 @@ function FileUpload() {
 
         const file = event.target.files[0];
         
-        
+        // upload file to the server and retrieve the url so that it can be rendered in pdf viewer
         if (!file) {
             alert('Please select a file to upload!');
             return;
@@ -25,7 +26,36 @@ function FileUpload() {
         .catch(error => {
             console.error(error);
         })
+
+        // sent the request to rest api and receive the response
+
+        try {
+            sentToRestAPI(file);
+
+            console.log('Successfully executed the command.')
+        } catch (error) {
+            console.error('Error sending file to REST API:', error);
+        }
+        
+
+      
     };
+
+    async function sentToRestAPI(file) {
+        const formData = new FormData();
+        formData.append('pdf', file);
+
+        try {
+            const response = await axios.post("https://resume-evaluation-api-ba919b4c67f1.herokuapp.com/evaluate", formData, {
+            });
+            onResponse(response.data);
+            console.log(response.data)
+        }
+        catch (error) {
+            console.error('Error uploading file:', error);
+        }
+
+    }
 
     async function uploadFile(file) {
         const formData = new FormData();
@@ -93,7 +123,7 @@ function FileUpload() {
                 </div>
                     
                 
-                <div className="p-4 text-white">Disclaimer</div>
+                {/* <div className="p-4 text-white">Disclaimer</div> */}
 
             </div>
 
